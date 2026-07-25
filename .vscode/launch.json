@@ -11,6 +11,19 @@
             "name": "JavaScript Debug Terminal",
             "request": "launch",
             "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "JavaScript Debug Terminal",
+            "request": "launch",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "Run Script: Assignments",
+            "request": "launch",
+            "command": "npm run Assignments",
+            "cwd": "${workspaceFolder}\\Assignments"
         }
     ]
 }
