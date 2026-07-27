@@ -1,16 +1,16 @@
 const read = require("readline-sync");
 const fs = require("fs");
 
-let social;
-
-if (fs.existsSync("social.json")) {
+let socialMedia;
+//A function which was used to overcome the constant initilization of social object even after the update.
+if (fs.existsSync("socialMedia.json")) {
     // Load existing data
-    social = JSON.parse(
-        fs.readFileSync("social.json", "utf8")
+    socialMedia = JSON.parse(
+        fs.readFileSync("socialMedia.json", "utf8")
     );
 } else {
     // Create initial data only for the first run
-    social = {
+    socialMedia = {
         Username: "Iush Sub",
         mail: "xyz@gmail.com",
         likes: 100,
@@ -27,22 +27,23 @@ if (fs.existsSync("social.json")) {
 
 
 
+// `` is used so that we can write in by pressing enter. unlike python we use `` instead of normal ""
 
-function welcome() {
+function displayProfile() {
     console.log(`
 *** Welcome to Profile of Iush The Great. ***
 
-Name: ${social.Username}
-Mail: ${social.mail}
-Likes: ${social.likes}
-Comments: ${social.Comments}
-Friends: ${social.friends}
+Name: ${socialMedia.Username}
+Mail: ${socialMedia.mail}
+Likes: ${socialMedia.likes}
+Comments: ${socialMedia.Comments}
+Friends: ${socialMedia.friends}
 `);
 
-    update();
+    updateProfile();
 }
 
-function update() {
+function updateProfile() {
     const action = read.question(`
 @@@ Press 1 to update @@@
 @@@ Press 0 to exit @@@
@@ -61,34 +62,34 @@ Your choice: `);
 
         if (field === "name") {
             const newName = read.question("New name: ");
-            social.Username=newName;
-            welcome()
+            socialMedia.Username=newName;
+            displayProfile()
         }
         else if(field==="mail")
         {
             const newMail = read.question("New mail: ");
-            social.mail=newMail;
-            welcome()
+            socialMedia.mail=newMail;
+            displayProfile()
         }
         else if(field==="+1"){
-          social.likes++;
-          welcome()
+          socialMedia.likes++;
+          displayProfile()
         }
         else if(field==="comments")
         {
           const newComment=read.question("New comment: ");
-          social.Comments.push(newComment);
-          welcome();
+          socialMedia.Comments.push(newComment);
+          displayProfile();
         }
         else if(field==="frnds")
         {
           const newFrnds=read.question("New friend: ");
-          social.friends.push(newFrnds);
-          welcome();
+          socialMedia.friends.push(newFrnds);
+          displayProfile();
         }
         else{
           console.log("Error")
-          welcome()
+          displayProfile()
         }
     }
     else{
@@ -97,10 +98,10 @@ Your choice: `);
 }
 
 
-welcome();
+displayProfile();
 
 
 fs.writeFileSync(
-    "social.json",
+    "socialMedia.json",
     JSON.stringify(social, null, 2)
 );
