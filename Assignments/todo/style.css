@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Times New Roman', Times, serif;
+    background-color:palegreen;
+}
+main{
+    width: 600px;
+    margin: 50px auto;
+}
+#welcome-section{
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+#welcome-section h1{
+    font-size: 40px;
+}
+
+#welcome-section h2{
+    margin-top: 10px;
+    color: grey;
+    font-size: 18px;
+}
+#task-form{
+    display: flex;
+    gap: 10px;
+}
+#task-input{
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+label{
+    color: #555;
+    font-size: 18px;
+}
