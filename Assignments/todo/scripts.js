@@ -24,6 +24,11 @@ form.addEventListener("submit",(event)=>
         newtask.appendChild(span)
         list.appendChild(newtask)
         inputTask.value="";
+
+        checkbox.addEventListener("change",()=>
+        {
+            span.classList.toggle("completed");
+        })
     }  
     
    

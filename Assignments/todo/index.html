@@ -12,6 +12,7 @@
     
     
     <main>
+        <div class="container">
 
         <section id="welcome-section">
             <!--We will be doing styling in css-->
@@ -22,8 +23,12 @@
 
         <section id="form-section">
             <form id="task-form">
-                <label for="task-input">Enter Your Task</label>
-                <input id="task-input" type="text">
+                <label for="task-input" style="position: relative;">Enter Your Task</label>
+                <div class="input-row">
+                    <input id="task-input" type="text">
+                    
+                </div>
+
                 <button id="addone" type="submit">Next task</button>
                 <button id="cleartask" type="button">Clear</button>
                 
@@ -37,7 +42,7 @@
                 </ul>
                
         </section>
-
+        </div>
     
     </main>
     <script src="scripts.js"></script>
